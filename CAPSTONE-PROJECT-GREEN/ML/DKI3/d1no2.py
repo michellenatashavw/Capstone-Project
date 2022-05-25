@@ -15,7 +15,7 @@ time_step = []
 pm10 = []
 
 # Open CSV file
-with open('/home/yance/capscrot/CAPSTONE-PROJECT-GREEN/dataset/DKI1.csv') as csvfile:
+with open('/home/yance/capscrot/CAPSTONE-PROJECT-GREEN/ML/DKI3.csv') as csvfile:
   
   # Initialize reader
   reader = csv.reader(csvfile, delimiter=',')
@@ -26,7 +26,7 @@ with open('/home/yance/capscrot/CAPSTONE-PROJECT-GREEN/dataset/DKI1.csv') as csv
   # Append row and sunspot number to lists
   for row in reader:
     time_step.append(row[1])
-    pm10.append(float(row[7]))
+    pm10.append(float(row[8]))
 
 # Convert lists to numpy arrays
 time = np.array(time_step)
@@ -132,13 +132,13 @@ results = forecast.squeeze()
 # Compute the MAE
 #print(tf.keras.metrics.mean_absolute_error(x_valid, results).numpy())
 # for call modul
-def o3(tanggal):
+def no2(tanggal):
   df = pd.DataFrame(time_valid, columns = ['tanggal'])
   df2 = pd.DataFrame(results, columns = ['Value'])
   df = pd.concat ([df, df2],axis = 1)
   df = df[df['tanggal'] == tanggal]
   return df
-
+  
 
 
 

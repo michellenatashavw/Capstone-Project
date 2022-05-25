@@ -15,7 +15,7 @@ time_step = []
 pm10 = []
 
 # Open CSV file
-with open('/home/yance/capscrot/CAPSTONE-PROJECT-GREEN/dataset/DKI1.csv') as csvfile:
+with open('/home/yance/capscrot/CAPSTONE-PROJECT-GREEN/ML/DKI4.csv') as csvfile:
   
   # Initialize reader
   reader = csv.reader(csvfile, delimiter=',')
